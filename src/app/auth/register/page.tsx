@@ -50,96 +50,90 @@ export default function Register() {
     };
 
     return (
-        <div>
-            <div className="hero bg-base-200 min-h-screen">
-                <div className="hero-content flex-col lg:flex-row-reverse">
-                    <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-                        {validation.errors && (
-                            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
-                                {validation.errors.map((error, index) => (
-                                    <p className="text-sm" key={index}>{error.path} : {error.msg}</p>
-                                ))}
-                            </div>
-                        )}
-                        {loginFailed.message && (
-                            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
-                                <p className="text-sm">
-                                    {loginFailed.message}
-                                </p>
-                            </div>
-                        )}
-
-                        <form className="card-body" onSubmit={register}>
-                            <div className="text-xl text-center font-semibold lg:px-[120px] px-28">
-                                <h1>Register</h1>
-                            </div>
-
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Username</span>
-                                </label>
-                                <input
-                                    className="input input-bordered text-black"
-                                    type="text"
-                                    value={username}
-                                    onChange={(e) => setUsername(e.target.value)}
-                                    placeholder="Username"
-                                />
-                            </div>
-
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Name</span>
-                                </label>
-                                <input
-                                    className="input input-bordered text-black"
-                                    type="text"
-                                    value={name}
-                                    onChange={(e) => setName(e.target.value)}
-                                    placeholder="Name"
-                                />
-                            </div>
-
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Email</span>
-                                </label>
-                                <input
-                                    className="input input-bordered text-black"
-                                    type="email"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    placeholder="Email"
-                                />
-                            </div>
-
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Password</span>
-                                </label>
-                                <div className="relative">
-                                    <input
-                                        className="input input-bordered w-full text-black"
-                                        type="password"
-                                        value={password}
-                                        onChange={(e) => setPassword(e.target.value)}
-                                        placeholder="Password"
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="form-control mt-6">
-                                <button type="submit" className="btn btn-primary">Register</button>
-                            </div>
-
-                            <div className="mt-10 text-center flex flex-col gap-5">
-                                <div>
-                                    <Link href="/auth/login">Kembali ke halaman login..? <span className="text-sky-600">Login</span></Link>
-                                </div>
-                            </div>
-                        </form>
+        <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+            <div className="bg-slate-500 px-10 py-10 rounded-lg w-full md:mt-0 sm:max-w-md xl:p-0">
+                {validation.errors && (
+                    <div>
+                        {validation.errors.map((error, index) => (
+                            <p key={index}>{error.path} : {error.msg}</p>
+                        ))}
                     </div>
-                </div>
+                )}
+                {loginFailed.message && (
+                    <div className="px-6">
+                        <p className="text-lg flex justify-center bg-slate-700 rounded-md py-3 shadow-lg my-5 text-pink-500 text-center">
+                            {loginFailed.message}
+                        </p>
+                    </div>
+                )}
+                <form className="p-6" onSubmit={register}>
+                    <div className="text-center text-2xl font-semibold">
+                        <h1>Register</h1>
+                    </div>
+
+                    <div>
+                        <label>
+                            <span>Username</span>
+                        </label>
+                        <input
+                            className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            type="text"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                            placeholder="Username"
+                        />
+                    </div>
+
+                    <div>
+                        <label>
+                            <span>Name</span>
+                        </label>
+                        <input
+                            className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            type="text"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            placeholder="Name"
+                        />
+                    </div>
+
+                    <div>
+                        <label>
+                            <span>Email</span>
+                        </label>
+                        <input
+                            className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            placeholder="Email"
+                        />
+                    </div>
+
+                    <div>
+                        <label>
+                            <span>Password</span>
+                        </label>
+                        <div>
+                            <input
+                                className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                type="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                placeholder="Password"
+                            />
+                        </div>
+                    </div>
+
+                    <div className="justify-center flex mt-10 gap-5">
+                        <button className="bg-sky-500 text-center py-3 px-8 rounded-lg hover:bg-sky-600 duration-300" type="submit">Register</button>
+                    </div>
+                    <div>
+                        <div className="mt-5 text-center">
+                            <Link className="font-light" href="/auth/login">Kembali ke halaman login..? <span className="text-sky-400">Login</span></Link>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     );

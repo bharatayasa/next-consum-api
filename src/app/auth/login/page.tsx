@@ -79,7 +79,7 @@ export default function Login() {
 
                             {error && (
                                 <div className="alert alert-error">
-                                    <span>{error}</span>
+                                    {error}
                                 </div>
                             )}
 

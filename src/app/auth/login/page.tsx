@@ -68,70 +68,58 @@ export default function Login() {
     };
 
     return (
-        <div>
-            <div className="hero bg-base-200 min-h-screen">
-                <div className="hero-content flex-col">
-                    <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-                        <form className="card-body" onSubmit={login}>
-                            <div className="text-xl text-center font-semibold lg:px-36 px-28">
-                                <h1>Login</h1>
-                            </div>
-
-                            {error && (
-                                <div className="alert alert-error">
-                                    {error}
-                                </div>
-                            )}
-
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Username</span>
-                                </label>
-                                <input
-                                    className="input input-bordered text-black"
-                                    type="text"
-                                    value={username}
-                                    onChange={(e) => setUsername(e.target.value)}
-                                    placeholder="Username"
-                                    required
-                                />
-                            </div>
-
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Password</span>
-                                </label>
-                                <div className="relative">
-                                    <input
-                                        className="input input-bordered w-full text-black"
-                                        type="password"
-                                        value={password}
-                                        onChange={(e) => setPassword(e.target.value)}
-                                        placeholder="Password"
-                                        required
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="form-control mt-6">
-                                <button className="btn btn-primary" type="submit" disabled={loading}>
-                                    {loading ? 'Loading...' : 'Login'}
-                                </button>
-                            </div>
-
-                            <div className="form-control">
-                                <div className="mt-10 text-center flex flex-col gap-5">
-                                    <div>
-                                        <Link href="/auth/register">Belum punya akun..? <span className="text-sky-600">Register</span></Link>
-                                    </div>
-                                    <div>
-                                        <Link href="/"> <span className="text-sky-600">Kembali</span></Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+        <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+            <div className="bg-slate-500 px-10 py-10 rounded-lg w-full md:mt-0 sm:max-w-md xl:p-0">
+                <form className="p-6" onSubmit={login}>
+                    <div className="text-center text-2xl font-semibold">
+                        <h1>Login</h1>
                     </div>
-                </div>
+
+                    {error && (
+                        <div className="text-lg flex justify-center bg-slate-700 rounded-md py-3 shadow-lg my-5 text-pink-500">
+                            {error}
+                        </div>
+                    )}
+
+                    <div>
+                        <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Username</label>
+                        <input 
+                        className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            type="text" 
+                            value={username} 
+                            onChange={(e) => setUsername(e.target.value)} 
+                            placeholder="Username" required 
+                        />
+                    </div>
+
+                    <div>
+                        <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                        <input
+                            className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            placeholder="Password" required
+                        />
+                    </div>
+
+                    <div className="justify-center flex mt-10 gap-5">
+                        <button className="bg-sky-500 text-center py-3 px-8 rounded-lg hover:bg-sky-600 duration-300" type="submit" disabled={loading}>
+                            {loading ? 'Loading...' : 'Login'}
+                        </button>
+                        <div className="bg-emerald-500 text-center py-3 px-8 rounded-lg hover:bg-emerald-600 duration-300">
+                            <Link href="/"> <>Kembali</></Link>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <div className="mt-5 text-center">
+                                <Link className="font-light" href="/auth/register">Belum punya akun..? <span className="text-sky-400">Register</span></Link>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     );

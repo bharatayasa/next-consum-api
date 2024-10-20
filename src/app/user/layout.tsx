@@ -22,7 +22,7 @@ export default function UserLayout({
     return (
         <AuthProvider>
             <NavbarMenu />
-            <div>{children}</div>
+            <>{children}</>
         </AuthProvider>
     );
 }

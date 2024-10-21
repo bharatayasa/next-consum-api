@@ -130,7 +130,7 @@ export default function Register() {
                     </div>
                     <div>
                         <div className="mt-5 text-center">
-                            <Link className="font-light" href="/auth/login">Kembali ke halaman login..? <span className="text-sky-400">Login</span></Link>
+                            <Link className="font-light" href="/login">Kembali ke halaman login..? <span className="text-sky-400">Login</span></Link>
                         </div>
                     </div>
                 </form>

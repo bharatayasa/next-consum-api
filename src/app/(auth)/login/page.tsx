@@ -107,15 +107,15 @@ export default function Login() {
                         <button className="bg-sky-500 text-center py-3 px-8 rounded-lg hover:bg-sky-600 duration-300" type="submit" disabled={loading}>
                             {loading ? 'Loading...' : 'Login'}
                         </button>
-                        <div className="bg-emerald-500 text-center py-3 px-8 rounded-lg hover:bg-emerald-600 duration-300">
+                        {/* <div className="bg-emerald-500 text-center py-3 px-8 rounded-lg hover:bg-emerald-600 duration-300">
                             <Link href="/"> <>Kembali</></Link>
-                        </div>
+                        </div> */}
                     </div>
 
                     <div>
                         <div>
                             <div className="mt-5 text-center">
-                                <Link className="font-light" href="/auth/register">Belum punya akun..? <span className="text-sky-400">Register</span></Link>
+                                <Link className="font-light" href="/register">Belum punya akun..? <span className="text-sky-400">Register</span></Link>
                             </div>
                         </div>
                     </div>

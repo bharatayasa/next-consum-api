@@ -7,8 +7,8 @@ export default function Home() {
         <h1 className="text-center">Hallo world</h1>
         <p className="text-center">gaada apa apa disini, gabut doang belajar nextjs</p>
         <div className="flex gap-5 justify-center mt-10">
-            <Link className="bg-sky-500 text-center py-3 px-8 rounded-lg hover:bg-sky-600 duration-300" href={'/auth/login'}>Login</Link>
-            <Link className="bg-sky-500 text-center py-3 px-8 rounded-lg hover:bg-sky-600 duration-300" href={'/auth/register'}>Register</Link>
+            <Link className="bg-sky-500 text-center py-3 px-8 rounded-lg hover:bg-sky-600 duration-300" href={'/login'}>Login</Link>
+            <Link className="bg-sky-500 text-center py-3 px-8 rounded-lg hover:bg-sky-600 duration-300" href={'/register'}>Register</Link>
         </div>
       </div>
     </div>
